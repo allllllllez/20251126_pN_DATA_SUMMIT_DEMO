@@ -1,0 +1,12 @@
+services:
+  dev_tf:
+    platform: linux/amd64
+    build:
+      context: ./dockerfiles
+      dockerfile: tf.Dockerfile
+    volumes:
+      - ./:/home/dev/terraform
+    working_dir: /home/dev/terraform
+    env_file:
+      - ../.env
+    tty: true
